@@ -1,0 +1,21 @@
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "sol",
+        "total_photos",
+        "cameras"
+})
+public class PhotoFromManifest {
+
+    @JsonProperty("sol")
+    public Integer sol;
+    @JsonProperty("total_photos")
+    public Integer totalPhotos;
+    @JsonProperty("cameras")
+    public List<String> cameras = null;
+
+}
